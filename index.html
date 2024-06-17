@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev's Burger - A Melhor hamburgueria !</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
     <link rel="stylesheet" href="./styles/output.css"/>
     <script src="script.js" defer></script>
 </head>
@@ -28,16 +31,230 @@
     </div>
 </header>
 
-    <h2 class="text-2xl md:text-5xl font-bold text-center mt-9 mb-6">Conheça nosso menu </h2>
+    <h2 class="text-2xl md:text-5xl font-bold text-center mt-9 mb-6">Burger's Artesanal 🍔🔥</h2>
 
     <div id="menu">
 
-      <main>
+      <main class="grid-cols-1">
 
-        <div>
-            
+        <div class="flex gap-2">
+            <img 
+            src="assets/bg-01.jpeg"
+            alt="Devs Classic"      
+            class=" w-28 h-28 rounded-2xl hover:scale-110 hover:rotate-3 duration-300 "                           
+            />
+            <div>
+                <p class="font-bold"> ~ DEV's Classic </p>
+                <p class="text-sm">Pão Brioche selado na manteiga ,nossa suculenta carne de Fraldinha angus com 150g, coberto com queijo cheddar melt e  molho barbecue especial da casa. 🤤</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$22.99</p>
+            <button class="add-cart"
+            data-name="Dev's Classic"
+            data-price="22.99">
+                <i class="fa fa-cart-plus text-lg "></i>
+            </button>
         </div>
 
+        <div class="flex gap-2">
+            <img 
+            src="assets/bg-02.jpeg"
+            alt="Devs Classic"      
+            class=" w-28 h-28 rounded-2xl hover:scale-110 hover:rotate-3 duration-300 "                           
+            />
+            <div>
+                <p class="font-bold"> ~ DEV's Royal's </p>
+                <p class="text-sm">Pão Brioche selado na manteiga ,nossa suculenta carne de Fraldinha angus com 150g, coberto com queijo cheddar melt e  molho barbecue especial da casa. 🤤</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$22.99</p>
+            <button class="add-cart"
+            data-name="Dev's Classic"
+            data-price="22.99">
+                <i class="fa fa-cart-plus text-lg "></i>
+            </button>
+        </div>
+        <div class="flex gap-2">
+            <img 
+            src="assets/bg-03.jpeg"
+            alt="Devs Classic"      
+            class=" w-28 h-28 rounded-2xl hover:scale-110 hover:rotate-3 duration-300 "                           
+            />
+            <div>
+                <p class="font-bold"> ~ DEV's Groot </p>
+                <p class="text-sm">Pão Brioche selado na manteiga ,nossa suculenta carne de Fraldinha angus com 150g, coberto com queijo cheddar melt e  molho barbecue especial da casa. 🤤</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$22.99</p>
+            <button class="add-cart"
+            data-name="Dev's Classic"
+            data-price="22.99">
+                <i class="fa fa-cart-plus text-lg "></i>
+            </button>
+        </div>
+
+        <div class="flex gap-2">
+            <img 
+            src="assets/bg-04.jpeg"
+            alt="Devs Classic"      
+            class=" w-28 h-28 rounded-2xl hover:scale-110 hover:rotate-3 duration-300 "                           
+            />
+            <div>
+                <p class="font-bold"> ~ DEV's Onion Rings </p>
+                <p class="text-sm">Pão Brioche selado na manteiga ,nossa suculenta carne de Fraldinha angus com 150g, coberto com queijo cheddar melt e  molho barbecue especial da casa. 🤤</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$22.99</p>
+            <button class="add-cart"
+            data-name="Dev's Classic"
+            data-price="22.99">
+                <i class="fa fa-cart-plus text-lg "></i>
+            </button>
+        </div>
+
+        <div class="flex gap-2">
+            <img 
+            src="assets/bg-05.jpeg"
+            alt="Devs Classic"      
+            class=" w-28 h-28 rounded-2xl hover:scale-110 hover:rotate-3 duration-300 "                           
+            />
+            <div>
+                <p class="font-bold"> ~ DEV's Fabuloso </p>
+                <p class="text-sm">Pão Brioche selado na manteiga ,nossa suculenta carne de Fraldinha angus com 150g, coberto com queijo cheddar melt e  molho barbecue especial da casa. 🤤</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$22.99</p>
+            <button class="add-cart"
+            data-name="Dev's Classic"
+            data-price="22.99">
+                <i class="fa fa-cart-plus text-lg "></i>
+            </button>
+        </div>
+
+        <div class="flex gap-2">
+            <img 
+            src="assets/bg-06.jpeg"
+            alt="Devs Classic"      
+            class=" w-28 h-28 rounded-2xl hover:scale-110 hover:rotate-3 duration-300 "                           
+            />
+            <div>
+                <p class="font-bold"> ~ DEV's Salad </p>
+                <p class="text-sm">Pão Brioche selado na manteiga ,nossa suculenta carne de Fraldinha angus com 150g, coberto com queijo cheddar melt e  molho barbecue especial da casa. 🤤</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$22.99</p>
+            <button class="add-cart"
+            data-name="Dev's Classic"
+            data-price="22.99">
+                <i class="fa fa-cart-plus text-lg "></i>
+            </button>
+        </div>
+
+        <div class="flex gap-2">
+            <img 
+            src="assets/bg-07.jpeg"
+            alt="Devs Classic"      
+            class=" w-28 h-28 rounded-2xl hover:scale-110 hover:rotate-3 duration-300 "                           
+            />
+            <div>
+                <p class="font-bold"> ~ DEV's Smash Double </p>
+                <p class="text-sm">Pão Brioche selado na manteiga ,nossa suculenta carne de Fraldinha angus com 150g, coberto com queijo cheddar melt e  molho barbecue especial da casa. 🤤</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$22.99</p>
+            <button class="add-cart"
+            data-name="Dev's Classic"
+            data-price="22.99">
+                <i class="fa fa-cart-plus text-lg "></i>
+            </button>
+        </div>
+
+        <div class="flex gap-2">
+            <img 
+            src="assets/bg-8.jpeg"
+            alt="Devs Classic"      
+            class=" w-28 h-28 rounded-2xl hover:scale-110 hover:rotate-3 duration-300 "                           
+            />
+            <div>
+                <p class="font-bold"> ~ DEV's Double </p>
+                <p class="text-sm">Pão Brioche selado na manteiga ,nossa suculenta carne de Fraldinha angus com 150g, coberto com queijo cheddar melt e  molho barbecue especial da casa. 🤤</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$22.99</p>
+            <button class="add-cart"
+            data-name="Dev's Classic"
+            data-price="22.99">
+                <i class="fa fa-cart-plus text-lg "></i>
+            </button>
+        </div>
+
+        <div class="flex gap-2">
+            <img 
+            src="assets/bg-9.jpeg"
+            alt="Devs Classic"      
+            class=" w-28 h-28 rounded-2xl hover:scale-110 hover:rotate-3 duration-300 "                           
+            />
+            <div>
+                <p class="font-bold"> ~ DEV's Supreme </p>
+                <p class="text-sm">Pão Brioche selado na manteiga ,nossa suculenta carne de Fraldinha angus com 150g, coberto com queijo cheddar melt e  molho barbecue especial da casa. 🤤</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$22.99</p>
+            <button class="add-cart"
+            data-name="Dev's Classic"
+            data-price="22.99">
+                <i class="fa fa-cart-plus text-lg "></i>
+            </button>
+        </div>
+
+        <div class="flex gap-2">
+            <img 
+            src="assets/bg-10.jpeg"
+            alt="Devs Classic"      
+            class=" w-28 h-28 rounded-2xl hover:scale-110 hover:rotate-3 duration-300 "                           
+            />
+            <div>
+                <p class="font-bold"> ~ DEV's Monster </p>
+                <p class="text-sm">Pão Brioche selado na manteiga ,nossa suculenta carne de Fraldinha angus com 150g, coberto com queijo cheddar melt e  molho barbecue especial da casa. 🤤</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$22.99</p>
+            <button class="add-cart"
+            data-name="Dev's Classic"
+            data-price="22.99">
+                <i class="fa fa-cart-plus text-lg "></i>
+            </button>
+        </div>
+
+        <div class="flex gap-2">
+            <img 
+            src="assets/bg-11.png"
+            alt="Devs Classic"      
+            class=" w-28 h-28 rounded-2xl hover:scale-110 hover:rotate-3 duration-300 "                           
+            />
+            <div>
+                <p class="font-bold"> ~ DEV's Big BAcon </p>
+                <p class="text-sm">Pão Brioche selado na manteiga ,nossa suculenta carne de Fraldinha angus com 150g, coberto com queijo cheddar melt e  molho barbecue especial da casa. 🤤</p>
+            </div>
+        </div>
+        <div class="flex items-center gap-2 justify-between mt-3">
+            <p class="font-bold text-lg">R$22.99</p>
+            <button class="add-cart"
+            data-name="Dev's Classic"
+            data-price="22.99">
+                <i class="fa fa-cart-plus text-lg "></i>
+            </button>
+        </div>
 
       </main>
     </div>
