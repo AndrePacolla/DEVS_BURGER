@@ -94,4 +94,6 @@ function updateCartModal(){
             style: 'currency',
             currency: 'BRL'
         })}`;
+
+        cartCounter.innerText = cartList.length
 }
