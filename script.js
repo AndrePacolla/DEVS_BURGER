@@ -69,27 +69,29 @@ function updateCartModal(){
 
     cartList.forEach((item) => {
 
-        const cartItemElement = document.createElement('div')
+        const cartItemElement = document.createElement('div');
+        
+        cartItemElement.classList.add('flex','justify-between', 'mb-4','flex-col');
 
         cartItemElement.innerHTML = `
         
-        <div> 
+        <div class= 'flex items-center justify-between'> 
            <div>
-            <p>${item.name}</p> 
-            <p>${item.qtd}</p>
-            <p>${item.price}</p>
+            <p class= 'font-bold'>${item.name}</p> 
+            <p>Qtd: ${item.qtd}</p>
+            <p class='font-medium mt-2'>R$: ${item.price.toFixed(2)}</p>
            </div>
 
            <button>Remover</button>
 
         </div>
         `
+        total += item.price * item.qtd
+
         cartItems.appendChild(cartItemElement);
-
     })
-
-
-
-
-
+        cartTotal.innerHTML = `${total.toLocaleString('pr-BR',{
+            style: 'currency',
+            currency: 'BRL'
+        })}`;
 }
