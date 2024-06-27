@@ -9,10 +9,13 @@ const checkoutBtn = document.getElementById('checkout-btn');
 const addressWarn = document.getElementById('address-alert');
 const closeModalBtn = document.getElementById('close-modal-btn');
 
+let cartList= [];
+
 
 
 cartBtn.addEventListener('click', ()=>{
     cartModal.style.display = 'flex'
+    updateCartModal();
 });
 
 closeModalBtn.addEventListener('click', ()=>{
@@ -26,3 +29,67 @@ cartModal.addEventListener('click',(event)=>{
     }
 });
 
+
+menu.addEventListener('click',(event)=>{
+
+    let parentButton = event.target.closest('.add-cart'); //mais próximo
+
+    if(parentButton){
+        const name = parentButton.getAttribute('data-name');
+        const price = parseFloat(parentButton.getAttribute('data-price'));
+
+        addToCart(name ,price)
+    }
+}); 
+
+
+
+function addToCart(name, price){
+
+    const existingItem = cartList.find((item) => item.name === name)
+
+    if(existingItem){
+        existingItem.qtd += 1
+    }else{
+        cartList.push({
+            name,
+            price,
+            qtd: 1
+        })
+    }
+
+    updateCartModal();
+}
+
+
+function updateCartModal(){
+
+    let total = 0;
+    cartItems.innerHTML ='';
+
+    cartList.forEach((item) => {
+
+        const cartItemElement = document.createElement('div')
+
+        cartItemElement.innerHTML = `
+        
+        <div> 
+           <div>
+            <p>${item.name}</p> 
+            <p>${item.qtd}</p>
+            <p>${item.price}</p>
+           </div>
+
+           <button>Remover</button>
+
+        </div>
+        `
+        cartItems.appendChild(cartItemElement);
+
+    })
+
+
+
+
+
+}
