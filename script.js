@@ -27,7 +27,7 @@ cartModal.addEventListener('click',(event)=>{
     if(event.target === cartModal){
         cartModal.style.display = 'none'
     }
-});
+}); 
 
 
 menu.addEventListener('click',(event)=>{
@@ -82,7 +82,9 @@ function updateCartModal(){
             <p class='font-medium mt-2'>R$: ${item.price.toFixed(2)}</p>
            </div>
 
-           <button>Remover</button>
+           <button class= 'remove-btn' data-name="${item.name}">
+           Remover
+           </button>
 
         </div>
         `
@@ -90,10 +92,37 @@ function updateCartModal(){
 
         cartItems.appendChild(cartItemElement);
     })
-        cartTotal.innerHTML = `${total.toLocaleString('pr-BR',{
+    
+        cartTotal.textContent = total.toLocaleString('pt-BR',{
             style: 'currency',
             currency: 'BRL'
-        })}`;
+        }); 
 
         cartCounter.innerText = cartList.length
 }
+
+cartItems.addEventListener('click',(event)=>{
+    if(event.target.classList.contains('remove-btn')){
+        const name = event.target.getAttribute('data-name')
+
+        removeItemCart(name)
+    }
+})
+
+function removeItemCart(name){
+    const index = cartList.findIndex((item) => item.name === name)
+
+    if(index !== -1){
+        const item = cartList[index]
+
+        if(item.qtd >1){
+            item.qtd -= 1;
+            updateCartModal();
+            return;
+        }
+
+        cartList.splice(index , 1)
+        updateCartModal();
+    }
+}
+
