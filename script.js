@@ -122,8 +122,13 @@ function removeItemCart(name){
     }
 };
 
-address.addEventListener('input',(event)=>{
+address.addEventListener('input',(event)=>{ // evento de monitorar nosso input
     let inputValue = event.target.value
+
+    if(inputValue !== ''){
+        address.classList.remove('border-red-500');
+        addressWarn.classList.add('hidden');
+    }
 
 });
 
