@@ -32,17 +32,14 @@ cartModal.addEventListener('click',(event)=>{
 
 menu.addEventListener('click',(event)=>{
 
-    let parentButton = event.target.closest('.add-cart'); //mais próximo
+    const btnParent = event.target.closest('.add-cart'); // classes mais proximas
 
-    if(parentButton){
-        const name = parentButton.getAttribute('data-name');
-        const price = parseFloat(parentButton.getAttribute('data-price'));
+    const name = btnParent.getAttribute('data-name');
+    const price = btnParent.getAttribute('data-price');
 
-        addToCart(name ,price)
-    }
-}); 
+    addToCart(name,price)
 
-
+});
 
 function addToCart(name, price){
 
@@ -57,7 +54,6 @@ function addToCart(name, price){
             qtd: 1
         })
     }
-
     updateCartModal();
 }
 
@@ -79,7 +75,7 @@ function updateCartModal(){
            <div>
             <p class= 'font-bold'>${item.name}</p> 
             <p>Qtd: ${item.qtd}</p>
-            <p class='font-medium mt-2'>R$: ${item.price.toFixed(2)}</p>
+            <p class='font-medium mt-2'>R$: ${item.price}</p>
            </div>
 
            <button class= 'remove-btn' data-name="${item.name}">
@@ -110,19 +106,36 @@ cartItems.addEventListener('click',(event)=>{
 })
 
 function removeItemCart(name){
-    const index = cartList.findIndex((item) => item.name === name)
+    const index = cartList.findIndex((item) => item.name === name) // so me devolve a posicao
 
     if(index !== -1){
-        const item = cartList[index]
-
-        if(item.qtd >1){
+        const item = cartList[index]; // passo pro item apenas a posicao do obj encontrado
+        
+        if(item.qtd > 1){
             item.qtd -= 1;
             updateCartModal();
             return;
         }
 
-        cartList.splice(index , 1)
+        cartList.splice(index, 1)
         updateCartModal();
     }
-}
+};
+
+address.addEventListener('input',(event)=>{
+    let inputValue = event.target.value
+
+});
+
+
+checkoutBtn.addEventListener('click',()=>{
+
+    if(cartList.length === 0) return; // se cart estiver vazio faça nada .
+
+    if(address.value === ''){
+        addressWarn.classList.remove('hidden');
+        address.classList.add('border-red-500');
+    }
+
+})
 
