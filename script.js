@@ -122,25 +122,23 @@ function removeItemCart(name){
     }
 };
 
-address.addEventListener('input',(event)=>{ // evento de monitorar nosso input
-    let inputValue = event.target.value
 
-    if(inputValue !== ''){
-        address.classList.remove('border-red-500');
-        addressWarn.classList.add('hidden');
-    }
+address.addEventListener('input',(event)=>{ 
+   let inputValue = event.target.value
 
+
+  
 });
 
 
 checkoutBtn.addEventListener('click',()=>{
-
-    if(cartList.length === 0) return; // se cart estiver vazio faça nada .
-
+    if(cartList.length === 0 ) return;
     if(address.value === ''){
         addressWarn.classList.remove('hidden');
-        address.classList.add('border-red-500');
-    }
+        address.classList.add('border-red-500')
+    } 
+
+   
 
 })
 
