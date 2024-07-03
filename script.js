@@ -1,6 +1,7 @@
 const menu = document.getElementById('menu');
 const address = document.getElementById('address');
 const cartBtn = document.getElementById('cart-btn');
+const spanItem = document.getElementById('date-span');
 const cartModal = document.getElementById('cart-modal');
 const cartItems = document.getElementById('cart-items');
 const cartTotal = document.getElementById('cart-total');
@@ -124,21 +125,44 @@ function removeItemCart(name){
 
 
 address.addEventListener('input',(event)=>{ 
-   let inputValue = event.target.value
-
-
-  
+   let inputValue = event.target.value;
+   if(inputValue !== ''){
+    addressWarn.classList.add('hidden');
+    address.classList.remove('border-red-500');
+   }  
 });
 
 
 checkoutBtn.addEventListener('click',()=>{
+
+    const openHrs = checkOpen();
+    if(!openHrs){
+        alert('DEVS BURGER FECHADO NO MOMENTO !')
+        return;
+    };
+
+
     if(cartList.length === 0 ) return;
     if(address.value === ''){
-        addressWarn.classList.remove('hidden');
+        addressWarn.classList.remove('hidden')
         address.classList.add('border-red-500')
+        return;
     } 
+});
 
-   
+function checkOpen(){
+    const data = new Date();
+    const hrs = data.getHours();
+    const openHrs =  hrs >= 18 && hrs < 24 ;
 
-})
+    if(openHrs){
+        spanItem.classList.remove('bg-red-500');
+        spanItem.classList.add('bg-green-600');
+    }else{
+        spanItem.classList.remove('bg-green-600');
+        spanItem.classList.add('bg-red-500');
+    }
 
+};
+
+checkOpen();
