@@ -148,7 +148,7 @@ checkoutBtn.addEventListener('click',()=>{
         return;
     } 
 
-    const cartItems = cartList.map((item) =>{
+    const cartItems = cartList.map((item) =>{ 
         return(
             ` ${item.name} Quantidade: (${item.qtd}) Preço R$ ${item.price}`
     )
