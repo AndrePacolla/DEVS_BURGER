@@ -107,17 +107,16 @@ cartItems.addEventListener('click',(event)=>{
 })
 
 function removeItemCart(name){
-    const index = cartList.findIndex((item) => item.name === name) // so me devolve a posicao
+    const index = cartList.findIndex((item) => item.name === name)
 
     if(index !== -1){
-        const item = cartList[index]; // passo pro item apenas a posicao do obj encontrado
+        const item = cartList[index]; 
         
         if(item.qtd > 1){
             item.qtd -= 1;
             updateCartModal();
             return;
         }
-
         cartList.splice(index, 1)
         updateCartModal();
     }
@@ -135,8 +134,8 @@ address.addEventListener('input',(event)=>{
 
 checkoutBtn.addEventListener('click',()=>{
 
-    const openHrs = checkOpen();
-    if(!openHrs){
+    const isOpen = checkOpen();
+    if(!isOpen){
         alert('DEVS BURGER FECHADO NO MOMENTO !')
         return;
     };
@@ -148,21 +147,31 @@ checkoutBtn.addEventListener('click',()=>{
         address.classList.add('border-red-500')
         return;
     } 
+
+    const cartItems = cartList.map((item) =>{
+        return(
+            ` ${item.name} Quantidade: (${item.qtd}) Preço R$ ${item.price}`
+    )
+    }).join('')
+
+    const message = encodeURIComponent(cartItems);
+    const phone = '19994071724'
+    
+    window.open(`https://wa.me/${phone}?text=${message} Endereço:${address.value}`,'_blank')
 });
 
 function checkOpen(){
     const data = new Date();
     const hrs = data.getHours();
-    const openHrs =  hrs >= 18 && hrs < 24 ;
-
-    if(openHrs){
-        spanItem.classList.remove('bg-red-500');
-        spanItem.classList.add('bg-green-600');
-    }else{
-        spanItem.classList.remove('bg-green-600');
-        spanItem.classList.add('bg-red-500');
-    }
-
+    return hrs >= 18 && hrs < 24;
 };
 
-checkOpen();
+const openHrs = checkOpen();
+
+if(openHrs){
+    spanItem.classList.remove('bg-red-500');
+    spanItem.classList.add('bg-green-600');
+}else{
+    spanItem.classList.remove('bg-green-600');
+    spanItem.classList.add('bg-red-500');
+};
