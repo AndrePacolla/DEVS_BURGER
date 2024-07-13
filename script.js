@@ -136,7 +136,18 @@ checkoutBtn.addEventListener('click',()=>{
 
     const isOpen = checkOpen();
     if(!isOpen){
-        alert('DEVS BURGER FECHADO NO MOMENTO !')
+        Toastify({
+        text: "Ops a Dev's Burger está fechado",
+        duration: 3000,
+        close: true,
+        gravity: "top", 
+        position: "right",
+        stopOnFocus: true, 
+        style: {
+            background: "linear-gradient(to right,#ef4444, #96c93d)",
+        },
+        }).showToast();
+        
         return;
     };
 
@@ -154,7 +165,7 @@ checkoutBtn.addEventListener('click',()=>{
 
     totalItem += item.price * item.qtd;
 
-    return `${item.name}  Quantidade: (${item.qtd}) Preço R$ ${item.price} Total:${totalItem} |`
+    return `${item.name}  Quantidade: (${item.qtd}) Preço R$ ${item.price} TotalItens: ${totalItem} |`
     }).join('')
 
     const message = encodeURI(cartItems);
@@ -171,7 +182,7 @@ checkoutBtn.addEventListener('click',()=>{
 function checkOpen(){
     const data = new Date();
     const hrs = data.getHours();
-    return hrs >= 18 && hrs < 24;
+    return hrs >= 18 && hrs < 23;
 };
 
 const openHrs = checkOpen();
