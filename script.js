@@ -10,7 +10,7 @@ const checkoutBtn = document.getElementById('checkout-btn');
 const addressWarn = document.getElementById('address-alert');
 const closeModalBtn = document.getElementById('close-modal-btn');
 
-let cartList= [];
+let cartList = [];
 
 
 
@@ -149,15 +149,23 @@ checkoutBtn.addEventListener('click',()=>{
     } 
 
     const cartItems = cartList.map((item) =>{ 
-        return(
-            ` ${item.name}  Quantidade: (${item.qtd}) Preço R$ ${item.price}`
-    )
+
+    let totalItem = 0;
+
+    totalItem += item.price * item.qtd;
+
+    return `${item.name}  Quantidade: (${item.qtd}) Preço R$ ${item.price} Total:${totalItem} |`
     }).join('')
 
-    const message = encodeURIComponent(cartItems);
-    const phone = '19994071725'
-    
-    window.open(`https://wa.me/${phone}?text=${message} Endereço:${address.value}`,'_blank')
+    const message = encodeURI(cartItems);
+    const phone = '19994071725';
+
+    window.open(`https://wa.me/${phone}?text=${message} Endereço: ${address.value}`, '_blank')
+
+    cartList = [];
+
+    updateCartModal();
+
 });
 
 function checkOpen(){
