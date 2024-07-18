@@ -194,3 +194,12 @@ if(openHrs){
     spanItem.classList.remove('bg-green-600');
     spanItem.classList.add('bg-red-500');
 };
+
+
+
+const btn = document.getElementById('botao');
+const nav = document.getElementById('nav');
+
+btn.addEventListener('click',()=>{
+ nav.classList.toggle('hidden')
+})
